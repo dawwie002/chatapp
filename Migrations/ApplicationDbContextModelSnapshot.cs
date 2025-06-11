@@ -224,6 +224,63 @@ namespace QuickChat.MVC.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
+            modelBuilder.Entity("QuickChat.MVC.Models.Category", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("QuickChat.MVC.Models.Conversation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("AssignedAgentId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("ClosedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("ClosedById")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsClosed")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("WidgetId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AssignedAgentId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("ClosedById");
+
+                    b.HasIndex("WidgetId");
+
+                    b.ToTable("Conversations");
+                });
+
             modelBuilder.Entity("QuickChat.MVC.Models.Message", b =>
                 {
                     b.Property<int>("Id")
@@ -231,6 +288,9 @@ namespace QuickChat.MVC.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<Guid>("ConversationId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
@@ -247,11 +307,65 @@ namespace QuickChat.MVC.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ConversationId");
+
                     b.HasIndex("ReceiverId");
 
                     b.HasIndex("SenderId");
 
                     b.ToTable("Messages");
+                });
+
+            modelBuilder.Entity("QuickChat.MVC.Models.Widget", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PublicIdentifier")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PublicIdentifier")
+                        .IsUnique();
+
+                    b.ToTable("Widgets");
+                });
+
+            modelBuilder.Entity("QuickChat.MVC.Models.WidgetUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("WidgetId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.HasIndex("WidgetId");
+
+                    b.ToTable("WidgetUsers");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -305,8 +419,43 @@ namespace QuickChat.MVC.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("QuickChat.MVC.Models.Conversation", b =>
+                {
+                    b.HasOne("QuickChat.MVC.Models.ApplicationUser", "AssignedAgent")
+                        .WithMany()
+                        .HasForeignKey("AssignedAgentId");
+
+                    b.HasOne("QuickChat.MVC.Models.Category", "Category")
+                        .WithMany("Conversations")
+                        .HasForeignKey("CategoryId");
+
+                    b.HasOne("QuickChat.MVC.Models.ApplicationUser", "ClosedBy")
+                        .WithMany()
+                        .HasForeignKey("ClosedById");
+
+                    b.HasOne("QuickChat.MVC.Models.Widget", "Widget")
+                        .WithMany("Conversations")
+                        .HasForeignKey("WidgetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("AssignedAgent");
+
+                    b.Navigation("Category");
+
+                    b.Navigation("ClosedBy");
+
+                    b.Navigation("Widget");
+                });
+
             modelBuilder.Entity("QuickChat.MVC.Models.Message", b =>
                 {
+                    b.HasOne("QuickChat.MVC.Models.Conversation", "Conversation")
+                        .WithMany("Messages")
+                        .HasForeignKey("ConversationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("QuickChat.MVC.Models.ApplicationUser", "Receiver")
                         .WithMany("ReceivedMessages")
                         .HasForeignKey("ReceiverId");
@@ -315,9 +464,30 @@ namespace QuickChat.MVC.Migrations
                         .WithMany("SentMessages")
                         .HasForeignKey("SenderId");
 
+                    b.Navigation("Conversation");
+
                     b.Navigation("Receiver");
 
                     b.Navigation("Sender");
+                });
+
+            modelBuilder.Entity("QuickChat.MVC.Models.WidgetUser", b =>
+                {
+                    b.HasOne("QuickChat.MVC.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("QuickChat.MVC.Models.Widget", "Widget")
+                        .WithMany("WidgetUsers")
+                        .HasForeignKey("WidgetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+
+                    b.Navigation("Widget");
                 });
 
             modelBuilder.Entity("QuickChat.MVC.Models.ApplicationUser", b =>
@@ -325,6 +495,23 @@ namespace QuickChat.MVC.Migrations
                     b.Navigation("ReceivedMessages");
 
                     b.Navigation("SentMessages");
+                });
+
+            modelBuilder.Entity("QuickChat.MVC.Models.Category", b =>
+                {
+                    b.Navigation("Conversations");
+                });
+
+            modelBuilder.Entity("QuickChat.MVC.Models.Conversation", b =>
+                {
+                    b.Navigation("Messages");
+                });
+
+            modelBuilder.Entity("QuickChat.MVC.Models.Widget", b =>
+                {
+                    b.Navigation("Conversations");
+
+                    b.Navigation("WidgetUsers");
                 });
 #pragma warning restore 612, 618
         }

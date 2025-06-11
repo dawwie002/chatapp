@@ -11,7 +11,18 @@ namespace QuickChat.MVC.Data
         {
         }
 
-
         public DbSet<Message> Messages { get; set; }
+        public DbSet<Widget> Widgets { get; set; }
+        public DbSet<WidgetUser> WidgetUsers { get; set; }
+        public DbSet<Conversation> Conversations { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<Widget>()
+                .HasIndex(w => w.PublicIdentifier)
+                .IsUnique();
+        }
     }
 }

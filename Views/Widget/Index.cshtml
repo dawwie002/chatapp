@@ -1,0 +1,41 @@
+﻿@model List<QuickChat.MVC.ViewModels.WidgetViewModels.UserWidgetViewModel>
+
+@{
+    ViewData["Title"] = "Twoje widżety";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">➕ Utwórz nowy widżet</a>
+</p>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nazwa</th>
+                <th>Rola</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var widget in Model)
+            {
+                <tr>
+                    <td>@widget.WidgetName</td>
+                    <td>@widget.Role</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@widget.WidgetId" class="btn btn-sm btn-warning">Edytuj</a>
+                        @* Możesz dodać więcej akcji jak Edycja czy Usuń jeśli potrzebujesz *@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Nie masz jeszcze żadnych widżetów.</p>
+}

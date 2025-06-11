@@ -1,0 +1,682 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\message\\chat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\message\\chat.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\message\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\message\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\models\\conversation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:models\\conversation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:controllers\\messagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:hubs\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\service\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:service\\messageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\helpers\\icurrentuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:helpers\\icurrentuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\helpers\\currentuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:helpers\\currentuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\controllers\\widgetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:controllers\\widgetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\widget\\manageteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\widget\\manageteam.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\service\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:service\\widgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\viewmodels\\widgetviewmodels\\userwidgetviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:viewmodels\\widgetviewmodels\\userwidgetviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\models\\widgetuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:models\\widgetuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\interface\\iwidgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:interface\\iwidgetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\viewmodels\\widgetviewmodels\\widgetteamviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:viewmodels\\widgetviewmodels\\widgetteamviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\widget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\widget\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\widget\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\widget\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\viewmodels\\widgetviewmodels\\editwidgetviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:viewmodels\\widgetviewmodels\\editwidgetviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\viewmodels\\widgetviewmodels\\createwidgetviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:viewmodels\\widgetviewmodels\\createwidgetviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\interface\\imessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:interface\\imessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\models\\widget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:models\\widget.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\constants\\rolenames.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:constants\\rolenames.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\viewmodels\\messageviewmodels\\usermessageslistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:viewmodels\\messageviewmodels\\usermessageslistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\widget\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\widget\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\viewmodels\\messageviewmodels\\messageuserslistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:viewmodels\\messageviewmodels\\messageuserslistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\viewmodels\\messageviewmodels\\chatviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:viewmodels\\messageviewmodels\\chatviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\quickchat.mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:quickchat.mvc.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:wwwroot\\lib\\jquery\\dist\\jquery.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|c:\\users\\dawid\\desktop\\quickchat\\quickchat.mvc\\migrations\\20250610164516_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FBAA5D9B-6D03-42FC-AFAE-7B4F96C85198}|QuickChat.MVC.csproj|solutionrelative:migrations\\20250610164516_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 440,
+          "SelectedChildIndex": 12,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Widget\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\Index.cshtml",
+              "RelativeToolTip": "Views\\Widget\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T16:36:54.964Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MessageController.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Controllers\\MessageController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MessageController.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Controllers\\MessageController.cs",
+              "RelativeToolTip": "Controllers\\MessageController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T17:57:10.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Hubs\\ChatHub.cs",
+              "RelativeDocumentMoniker": "Hubs\\ChatHub.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Hubs\\ChatHub.cs",
+              "RelativeToolTip": "Hubs\\ChatHub.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAAC8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T18:00:54.262Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ICurrentUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Helpers\\ICurrentUserService.cs",
+              "RelativeDocumentMoniker": "Helpers\\ICurrentUserService.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Helpers\\ICurrentUserService.cs",
+              "RelativeToolTip": "Helpers\\ICurrentUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T10:02:17.828Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:35:21.522Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MessageService.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Service\\MessageService.cs",
+              "RelativeDocumentMoniker": "Service\\MessageService.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Service\\MessageService.cs",
+              "RelativeToolTip": "Service\\MessageService.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAQwE0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T10:00:40.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IWidgetService.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Interface\\IWidgetService.cs",
+              "RelativeDocumentMoniker": "Interface\\IWidgetService.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Interface\\IWidgetService.cs",
+              "RelativeToolTip": "Interface\\IWidgetService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T13:05:10.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Conversation.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Conversation.cs",
+              "RelativeDocumentMoniker": "Models\\Conversation.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Conversation.cs",
+              "RelativeToolTip": "Models\\Conversation.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAowCMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:16:23.392Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "Models\\Category.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Category.cs",
+              "RelativeToolTip": "Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:16:44.506Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Models\\Message.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Message.cs",
+              "RelativeToolTip": "Models\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:28:27.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Message\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Message\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Message\\Index.cshtml",
+              "RelativeToolTip": "Views\\Message\\Index.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAgwDAAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T17:59:15.741Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Chat.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Message\\Chat.cshtml",
+              "RelativeDocumentMoniker": "Views\\Message\\Chat.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Message\\Chat.cshtml",
+              "RelativeToolTip": "Views\\Message\\Chat.cshtml",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAAI8AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T18:00:23.673Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "WidgetTeamViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\WidgetTeamViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\WidgetViewModels\\WidgetTeamViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\WidgetTeamViewModel.cs",
+              "RelativeToolTip": "ViewModels\\WidgetViewModels\\WidgetTeamViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T17:10:05.473Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CurrentUserService.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Helpers\\CurrentUserService.cs",
+              "RelativeDocumentMoniker": "Helpers\\CurrentUserService.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Helpers\\CurrentUserService.cs",
+              "RelativeToolTip": "Helpers\\CurrentUserService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAtwCUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T10:02:58.075Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ManageTeam.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\ManageTeam.cshtml",
+              "RelativeDocumentMoniker": "Views\\Widget\\ManageTeam.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\ManageTeam.cshtml",
+              "RelativeToolTip": "Views\\Widget\\ManageTeam.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T17:18:46.264Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "WidgetController.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Controllers\\WidgetController.cs",
+              "RelativeDocumentMoniker": "Controllers\\WidgetController.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Controllers\\WidgetController.cs",
+              "RelativeToolTip": "Controllers\\WidgetController.cs",
+              "ViewState": "AgIAACIAAAAAAAAAAAAIwC4AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:38:51.748Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "WidgetUser.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\WidgetUser.cs",
+              "RelativeDocumentMoniker": "Models\\WidgetUser.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\WidgetUser.cs",
+              "RelativeToolTip": "Models\\WidgetUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:22:11.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "UserWidgetViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\UserWidgetViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\WidgetViewModels\\UserWidgetViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\UserWidgetViewModel.cs",
+              "RelativeToolTip": "ViewModels\\WidgetViewModels\\UserWidgetViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T16:42:11.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "WidgetService.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Service\\WidgetService.cs",
+              "RelativeDocumentMoniker": "Service\\WidgetService.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Service\\WidgetService.cs",
+              "RelativeToolTip": "Service\\WidgetService.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAIwGYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T13:07:52.878Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Widget\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\Edit.cshtml",
+              "RelativeToolTip": "Views\\Widget\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T17:04:50.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "20250610164516_init.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Migrations\\20250610164516_init.cs",
+              "RelativeDocumentMoniker": "Migrations\\20250610164516_init.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Migrations\\20250610164516_init.cs",
+              "RelativeToolTip": "Migrations\\20250610164516_init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T16:45:16.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "EditWidgetViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\EditWidgetViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\WidgetViewModels\\EditWidgetViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\EditWidgetViewModel.cs",
+              "RelativeToolTip": "ViewModels\\WidgetViewModels\\EditWidgetViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T16:57:21.068Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "CreateWidgetViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\CreateWidgetViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\WidgetViewModels\\CreateWidgetViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\WidgetViewModels\\CreateWidgetViewModel.cs",
+              "RelativeToolTip": "ViewModels\\WidgetViewModels\\CreateWidgetViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T12:56:47.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IMessageService.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Interface\\IMessageService.cs",
+              "RelativeDocumentMoniker": "Interface\\IMessageService.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Interface\\IMessageService.cs",
+              "RelativeToolTip": "Interface\\IMessageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:58:59.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Widget.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Widget.cs",
+              "RelativeDocumentMoniker": "Models\\Widget.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\Widget.cs",
+              "RelativeToolTip": "Models\\Widget.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:02:33.982Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "RoleNames.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Constants\\RoleNames.cs",
+              "RelativeDocumentMoniker": "Constants\\RoleNames.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Constants\\RoleNames.cs",
+              "RelativeToolTip": "Constants\\RoleNames.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:32:59.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UserMessagesListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\MessageViewModels\\UserMessagesListViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MessageViewModels\\UserMessagesListViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\MessageViewModels\\UserMessagesListViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MessageViewModels\\UserMessagesListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:54:28.09Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:34:24.791Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Widget\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Widget\\Create.cshtml",
+              "RelativeToolTip": "Views\\Widget\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-10T13:27:12.918Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T19:25:11.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ChatViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\MessageViewModels\\ChatViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MessageViewModels\\ChatViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\MessageViewModels\\ChatViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MessageViewModels\\ChatViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:56:15.105Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "MessageUsersListViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\MessageViewModels\\MessageUsersListViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\MessageViewModels\\MessageUsersListViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\ViewModels\\MessageViewModels\\MessageUsersListViewModel.cs",
+              "RelativeToolTip": "ViewModels\\MessageViewModels\\MessageUsersListViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:52:43.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:30:16.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-08T09:40:14.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "QuickChat.MVC.csproj",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\QuickChat.MVC.csproj",
+              "RelativeDocumentMoniker": "QuickChat.MVC.csproj",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\QuickChat.MVC.csproj",
+              "RelativeToolTip": "QuickChat.MVC.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-08T18:00:48.255Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T18:18:10.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T19:00:39.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T19:00:39.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "jquery.js",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "RelativeToolTip": "wwwroot\\lib\\jquery\\dist\\jquery.js",
+              "ViewState": "AgIAAFcOAAAAAAAAAAAAAGYOAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-06-08T18:34:25.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-08T09:34:28.226Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-06-08T09:47:26.899Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,47 @@
+﻿@model QuickChat.MVC.ViewModels.WidgetViewModels.WidgetTeamViewModel
+
+@{
+    ViewData["Title"] = "Zarządzanie zespołem";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Dodaj użytkownika do widżetu</h4>
+<form asp-action="ManageTeam" method="post">
+    <input type="hidden" asp-for="WidgetId" />
+
+    <div class="form-group">
+        <label asp-for="NewUserId"></label>
+        <input asp-for="NewUserId" class="form-control" />
+        <span asp-validation-for="NewUserId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NewUserRole"></label>
+        <select asp-for="NewUserRole" class="form-control" asp-items="ViewBag.Roles"></select>
+        <span asp-validation-for="NewUserRole" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Dodaj do zespołu</button>
+</form>
+
+<hr />
+
+<h4>Obecni członkowie</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Email</th>
+            <th>Rola</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var member in Model.TeamMembers)
+        {
+            <tr>
+                <td>@member.Email</td>
+                <td>@member.Role</td>
+            </tr>
+        }
+    </tbody>
+</table>

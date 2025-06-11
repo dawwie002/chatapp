@@ -33,5 +33,21 @@ namespace QuickChat.MVC.Helpers
             var user  = await dbContext.Users.FirstOrDefaultAsync(u => u.Id == UserId);
             return user;
         }
+
+        public async Task<string?> GetRoleInWidget(int widgetId)
+        {
+            var userId = UserId;
+
+            if (string.IsNullOrEmpty(userId))
+                return null;
+
+            var role = await dbContext.WidgetUsers
+                .Where(wu => wu.WidgetId == widgetId && wu.UserId == userId)
+                .Select(wu => wu.Role)
+                .FirstOrDefaultAsync();
+
+            return role;
+        }
+
     }
 }

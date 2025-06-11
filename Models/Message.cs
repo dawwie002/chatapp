@@ -16,5 +16,9 @@ namespace QuickChat.MVC.Models
 
         [ForeignKey(nameof(ReceiverId))]
         public ApplicationUser? Receiver { get; set; }
+
+        public Guid ConversationId { get; set; }
+        public Conversation Conversation { get; set; } = default!;
+
     }
 }
