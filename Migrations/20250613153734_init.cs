@@ -51,26 +51,11 @@ namespace QuickChat.MVC.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Categories",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Categories", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Widgets",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PublicIdentifier = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -184,38 +169,18 @@ namespace QuickChat.MVC.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Conversations",
+                name: "Categories",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    AssignedAgentId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    CategoryId = table.Column<int>(type: "int", nullable: true),
-                    ClosedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    IsClosed = table.Column<bool>(type: "bit", nullable: false),
-                    ClosedById = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    WidgetId = table.Column<int>(type: "int", nullable: false)
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    WidgetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Conversations", x => x.Id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Conversations_AspNetUsers_AssignedAgentId",
-                        column: x => x.AssignedAgentId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Conversations_AspNetUsers_ClosedById",
-                        column: x => x.ClosedById,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Conversations_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Conversations_Widgets_WidgetId",
+                        name: "FK_Categories_Widgets_WidgetId",
                         column: x => x.WidgetId,
                         principalTable: "Widgets",
                         principalColumn: "Id",
@@ -226,9 +191,8 @@ namespace QuickChat.MVC.Migrations
                 name: "WidgetUsers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    WidgetId = table.Column<int>(type: "int", nullable: false),
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    WidgetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     Role = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -250,6 +214,41 @@ namespace QuickChat.MVC.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Conversations",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    AssignedAgentId = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    CategoryId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    ClosedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
+                    IsClosed = table.Column<bool>(type: "bit", nullable: false),
+                    IsReadByAgent = table.Column<bool>(type: "bit", nullable: false),
+                    IsReadByClient = table.Column<bool>(type: "bit", nullable: false),
+                    WidgetId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Conversations", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Conversations_AspNetUsers_AssignedAgentId",
+                        column: x => x.AssignedAgentId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Conversations_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Conversations_Widgets_WidgetId",
+                        column: x => x.WidgetId,
+                        principalTable: "Widgets",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Messages",
                 columns: table => new
                 {
@@ -258,17 +257,11 @@ namespace QuickChat.MVC.Migrations
                     Text = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     SenderId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    ReceiverId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     ConversationId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Messages", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Messages_AspNetUsers_ReceiverId",
-                        column: x => x.ReceiverId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Messages_AspNetUsers_SenderId",
                         column: x => x.SenderId,
@@ -322,6 +315,11 @@ namespace QuickChat.MVC.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Categories_WidgetId",
+                table: "Categories",
+                column: "WidgetId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Conversations_AssignedAgentId",
                 table: "Conversations",
                 column: "AssignedAgentId");
@@ -330,11 +328,6 @@ namespace QuickChat.MVC.Migrations
                 name: "IX_Conversations_CategoryId",
                 table: "Conversations",
                 column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Conversations_ClosedById",
-                table: "Conversations",
-                column: "ClosedById");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Conversations_WidgetId",
@@ -347,20 +340,9 @@ namespace QuickChat.MVC.Migrations
                 column: "ConversationId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Messages_ReceiverId",
-                table: "Messages",
-                column: "ReceiverId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Messages_SenderId",
                 table: "Messages",
                 column: "SenderId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Widgets_PublicIdentifier",
-                table: "Widgets",
-                column: "PublicIdentifier",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_WidgetUsers_UserId",

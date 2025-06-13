@@ -2,13 +2,14 @@
 
 namespace QuickChat.MVC.ViewModels.WidgetViewModels
 {
-    public class EditWidgetViewModel
+    public class CreateCategoryViewModel
     {
-        public Guid Id { get; set; }
+        [Required(ErrorMessage = "Pole nie może być puste.")]
+        public Guid WidgetId { get; set; }
 
         [Required(ErrorMessage = "Pole nie może być puste.")]
-        [MaxLength(20, ErrorMessage = "Maksymalnie 20 znaków.")]
-        [Display(Name = "Nazwa")]
+        [MaxLength(30)]
+        [Display(Name = "Nazwa kategorii")]
         public string Name { get; set; } = default!;
     }
 }

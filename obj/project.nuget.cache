@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Mc2NNqIp594=",
+  "dgSpecHash": "V0aYQITDvTc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Dawid\\Desktop\\QuickChat\\QuickChat.MVC\\QuickChat.MVC.csproj",
+  "projectFilePath": "C:\\Users\\Dawid\\Desktop\\QuickChat\\chatapp\\QuickChat.MVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Dawid\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Dawid\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

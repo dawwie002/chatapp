@@ -12,7 +12,7 @@ using QuickChat.MVC.Data;
 namespace QuickChat.MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250610164516_init")]
+    [Migration("20250613153734_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -229,17 +229,20 @@ namespace QuickChat.MVC.Migrations
 
             modelBuilder.Entity("QuickChat.MVC.Models.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<Guid>("WidgetId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("WidgetId");
 
                     b.ToTable("Categories");
                 });
@@ -253,14 +256,11 @@ namespace QuickChat.MVC.Migrations
                     b.Property<string>("AssignedAgentId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int?>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid?>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime?>("ClosedAt")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("ClosedById")
-                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -268,16 +268,20 @@ namespace QuickChat.MVC.Migrations
                     b.Property<bool>("IsClosed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("WidgetId")
-                        .HasColumnType("int");
+                    b.Property<bool>("IsReadByAgent")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsReadByClient")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("WidgetId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
                     b.HasIndex("AssignedAgentId");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("ClosedById");
 
                     b.HasIndex("WidgetId");
 
@@ -298,9 +302,6 @@ namespace QuickChat.MVC.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("ReceiverId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("SenderId")
                         .HasColumnType("nvarchar(450)");
 
@@ -312,8 +313,6 @@ namespace QuickChat.MVC.Migrations
 
                     b.HasIndex("ConversationId");
 
-                    b.HasIndex("ReceiverId");
-
                     b.HasIndex("SenderId");
 
                     b.ToTable("Messages");
@@ -321,35 +320,24 @@ namespace QuickChat.MVC.Migrations
 
             modelBuilder.Entity("QuickChat.MVC.Models.Widget", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PublicIdentifier")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("PublicIdentifier")
-                        .IsUnique();
 
                     b.ToTable("Widgets");
                 });
 
             modelBuilder.Entity("QuickChat.MVC.Models.WidgetUser", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Role")
                         .IsRequired()
@@ -359,8 +347,8 @@ namespace QuickChat.MVC.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<int>("WidgetId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("WidgetId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
@@ -422,6 +410,17 @@ namespace QuickChat.MVC.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("QuickChat.MVC.Models.Category", b =>
+                {
+                    b.HasOne("QuickChat.MVC.Models.Widget", "Widget")
+                        .WithMany("Categories")
+                        .HasForeignKey("WidgetId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Widget");
+                });
+
             modelBuilder.Entity("QuickChat.MVC.Models.Conversation", b =>
                 {
                     b.HasOne("QuickChat.MVC.Models.ApplicationUser", "AssignedAgent")
@@ -432,10 +431,6 @@ namespace QuickChat.MVC.Migrations
                         .WithMany("Conversations")
                         .HasForeignKey("CategoryId");
 
-                    b.HasOne("QuickChat.MVC.Models.ApplicationUser", "ClosedBy")
-                        .WithMany()
-                        .HasForeignKey("ClosedById");
-
                     b.HasOne("QuickChat.MVC.Models.Widget", "Widget")
                         .WithMany("Conversations")
                         .HasForeignKey("WidgetId")
@@ -445,8 +440,6 @@ namespace QuickChat.MVC.Migrations
                     b.Navigation("AssignedAgent");
 
                     b.Navigation("Category");
-
-                    b.Navigation("ClosedBy");
 
                     b.Navigation("Widget");
                 });
@@ -459,17 +452,11 @@ namespace QuickChat.MVC.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("QuickChat.MVC.Models.ApplicationUser", "Receiver")
-                        .WithMany("ReceivedMessages")
-                        .HasForeignKey("ReceiverId");
-
                     b.HasOne("QuickChat.MVC.Models.ApplicationUser", "Sender")
-                        .WithMany("SentMessages")
+                        .WithMany()
                         .HasForeignKey("SenderId");
 
                     b.Navigation("Conversation");
-
-                    b.Navigation("Receiver");
 
                     b.Navigation("Sender");
                 });
@@ -493,13 +480,6 @@ namespace QuickChat.MVC.Migrations
                     b.Navigation("Widget");
                 });
 
-            modelBuilder.Entity("QuickChat.MVC.Models.ApplicationUser", b =>
-                {
-                    b.Navigation("ReceivedMessages");
-
-                    b.Navigation("SentMessages");
-                });
-
             modelBuilder.Entity("QuickChat.MVC.Models.Category", b =>
                 {
                     b.Navigation("Conversations");
@@ -512,6 +492,8 @@ namespace QuickChat.MVC.Migrations
 
             modelBuilder.Entity("QuickChat.MVC.Models.Widget", b =>
                 {
+                    b.Navigation("Categories");
+
                     b.Navigation("Conversations");
 
                     b.Navigation("WidgetUsers");

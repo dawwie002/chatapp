@@ -9,13 +9,9 @@ namespace QuickChat.MVC.Models
         public DateTime Date { get; set; }
 
         public string? SenderId { get; set; }
-        public string? ReceiverId { get; set; }
 
         [ForeignKey (nameof(SenderId))]
         public ApplicationUser? Sender { get; set; }
-
-        [ForeignKey(nameof(ReceiverId))]
-        public ApplicationUser? Receiver { get; set; }
 
         public Guid ConversationId { get; set; }
         public Conversation Conversation { get; set; } = default!;

@@ -2,12 +2,12 @@
 
 namespace QuickChat.MVC.ViewModels.WidgetViewModels
 {
-    public class WidgetTeamViewModel
+    public class ManageTeamViewModel
     {
-        public int WidgetId { get; set; }
+        public Guid WidgetId { get; set; }
 
-        [Required]
-        [Display(Name = "ID użytkownika (GUID)")]
+        [Required(ErrorMessage = "Pole nie może być puste.")]
+        [Display(Name = "Identyfikator użytkownika [Guid]")]
         public string NewUserId { get; set; } = default!;
 
         [Required]

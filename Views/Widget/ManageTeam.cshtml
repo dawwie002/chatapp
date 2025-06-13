@@ -1,4 +1,4 @@
-﻿@model QuickChat.MVC.ViewModels.WidgetViewModels.WidgetTeamViewModel
+﻿@model QuickChat.MVC.ViewModels.WidgetViewModels.ManageTeamViewModel
 
 @{
     ViewData["Title"] = "Zarządzanie zespołem";
@@ -33,6 +33,7 @@
         <tr>
             <th>Email</th>
             <th>Rola</th>
+            <th>Akcje</th>
         </tr>
     </thead>
     <tbody>
@@ -40,8 +41,35 @@
         {
             <tr>
                 <td>@member.Email</td>
-                <td>@member.Role</td>
+                <td>
+                    @if (member.Role == "Owner")
+                    {
+                        <span class="badge bg-secondary">Owner</span>
+                    }
+                    else
+                    {
+                        <form asp-action="ChangeUserRole" method="post" style="display:inline;">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="widgetId" value="@Model.WidgetId" />
+                            <input type="hidden" name="userId" value="@member.UserId" />
+                            <select name="newRole" class="form-control-sm">
+                                <option value="Admin" selected="@("Admin" == member.Role)">Admin</option>
+                                <option value="Agent" selected="@("Agent" == member.Role)">Agent</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-primary">Zmień</button>
+                        </form>
+                    }
+                </td>
+                <td>
+                    <form asp-action="RemoveUser" method="post">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="widgetId" value="@Model.WidgetId" />
+                        <input type="hidden" name="userId" value="@member.UserId" />
+                        <button type="submit" class="btn btn-danger" @(member.Role == "Owner" ? "disabled" : "")>Usuń</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
 </table>
+

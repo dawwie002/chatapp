@@ -10,9 +10,21 @@ namespace QuickChat.MVC.Interface
     {
         Task Create(CreateWidgetViewModel widgetViewModel);
         Task<List<UserWidgetViewModel>> GetWidgetsWithRolesForCurrentUser();
-        Task<EditWidgetViewModel?> GetWidgetForEdit(int widgetId);
+        Task<EditWidgetViewModel?> GetWidgetForEdit(Guid widgetId);
         Task<bool> UpdateWidget(EditWidgetViewModel model);
-        Task<WidgetTeamViewModel?> GetTeamManagementData(int widgetId);
-        Task<bool> AddUserToWidget(int widgetId, string userId, string role);
+        Task<ManageTeamViewModel?> GetTeamManagementData(Guid widgetId);
+        Task<bool> AddUserToWidget(Guid widgetId, string userId, string role);
+
+
+
+        Task<bool> DeleteWidget(Guid widgetId);
+
+
+        Task<bool> RemoveUserFromWidget(Guid widgetId, string userId);
+        Task<bool> ChangeUserRole(Guid widgetId, string userId, string newRole);
+
+
+        Task<bool> AddCategoryToWidget(Guid widgetId, string categoryName);
+        Task<List<Category>> GetCategoriesForWidget(Guid widgetId);
     }
 }

@@ -20,9 +20,13 @@ namespace QuickChat.MVC.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Widget>()
-                .HasIndex(w => w.PublicIdentifier)
-                .IsUnique();
+
+            modelBuilder.Entity<Category>()
+            .HasOne(c => c.Widget)
+            .WithMany(w => w.Categories)
+            .HasForeignKey(c => c.WidgetId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         }
     }
 }

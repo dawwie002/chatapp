@@ -34,7 +34,7 @@ namespace QuickChat.MVC.Helpers
             return user;
         }
 
-        public async Task<string?> GetRoleInWidget(int widgetId)
+        public async Task<string?> GetRoleInWidget(Guid widgetId)
         {
             var userId = UserId;
 

@@ -6,6 +6,7 @@ using QuickChat.MVC.Interface;
 using QuickChat.MVC.Models;
 using QuickChat.MVC.ViewModels.WidgetViewModels;
 
+
 namespace QuickChat.MVC.Service
 {
     public class WidgetService : IWidgetService
@@ -64,7 +65,7 @@ namespace QuickChat.MVC.Service
             return widgets;
         }
 
-        public async Task<EditWidgetViewModel?> GetWidgetForEdit(int widgetId)
+        public async Task<EditWidgetViewModel?> GetWidgetForEdit(Guid widgetId)
         {
             var widget = await context.Widgets.FindAsync(widgetId);
 
@@ -90,7 +91,7 @@ namespace QuickChat.MVC.Service
             return true;
         }
 
-        public async Task<WidgetTeamViewModel?> GetTeamManagementData(int widgetId)
+        public async Task<ManageTeamViewModel?> GetTeamManagementData(Guid widgetId)
         {
             var widget = await context.Widgets
                     .Include(w => w.WidgetUsers)
@@ -100,7 +101,7 @@ namespace QuickChat.MVC.Service
             if (widget == null)
                 return null;
 
-            return new WidgetTeamViewModel
+            return new ManageTeamViewModel
             {
                 WidgetId = widget.Id,
                 TeamMembers = widget.WidgetUsers.Select(wu => new UserWidgetViewModel
@@ -112,7 +113,7 @@ namespace QuickChat.MVC.Service
             };
         }
 
-        public async Task<bool> AddUserToWidget(int widgetId, string userId, string role)
+        public async Task<bool> AddUserToWidget(Guid widgetId, string userId, string role)
         {
             var alreadyExists = await context.WidgetUsers.AnyAsync(wu => wu.WidgetId == widgetId && wu.UserId == userId);
             if (alreadyExists)
@@ -133,6 +134,87 @@ namespace QuickChat.MVC.Service
             await context.SaveChangesAsync();
 
             return true;
+        }
+
+        public async Task<bool> DeleteWidget(Guid widgetId)
+        {
+            var userId = currentUserService.UserId;
+
+            var widgetUser = await context.WidgetUsers
+                .FirstOrDefaultAsync(wu => wu.WidgetId == widgetId && wu.UserId == userId);
+
+            if (widgetUser?.Role != RoleNames.Owner)
+            {
+                return false;
+            }
+
+            var widget = await this.context.Widgets
+                .Include(w => w.WidgetUsers)
+                .Include(w => w.Conversations)
+                .FirstOrDefaultAsync(w => w.Id == widgetId);
+
+            if (widget == null)
+                return false;
+
+            // ewentualnie usuń powiązania:
+            this.context.WidgetUsers.RemoveRange(widget.WidgetUsers);
+            this.context.Conversations.RemoveRange(widget.Conversations);
+            this.context.Widgets.Remove(widget);
+
+            await this.context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> RemoveUserFromWidget(Guid widgetId, string userId)
+        {
+            var widgetUser = await context.WidgetUsers
+                .FirstOrDefaultAsync(wu => wu.WidgetId == widgetId && wu.UserId == userId);
+
+            if (widgetUser == null || widgetUser.Role == RoleNames.Owner)
+                return false;
+
+            context.WidgetUsers.Remove(widgetUser);
+            await context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> ChangeUserRole(Guid widgetId, string userId, string newRole)
+        {
+            if (!new[] { RoleNames.Agent, RoleNames.Admin }.Contains(newRole))
+                return false;
+
+            var widgetUser = await context.WidgetUsers
+                .FirstOrDefaultAsync(wu => wu.WidgetId == widgetId && wu.UserId == userId);
+
+            if (widgetUser == null || widgetUser.Role == RoleNames.Owner)
+                return false;
+
+            widgetUser.Role = newRole;
+            await context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> AddCategoryToWidget(Guid widgetId, string categoryName)
+        {
+            var widget = await context.Widgets.FindAsync(widgetId);
+            if (widget == null) return false;
+
+            var category = new Category
+            {
+                Name = categoryName,
+                WidgetId = widgetId
+            };
+
+            context.Categories.Add(category);
+            await context.SaveChangesAsync();
+            return true;
+        }
+        public async Task<List<Category>> GetCategoriesForWidget(Guid widgetId)
+        {
+            return await context.Categories
+                .Where(c => c.WidgetId == widgetId)
+                .OrderBy(c => c.Name)
+                .ToListAsync();
         }
     }
 }

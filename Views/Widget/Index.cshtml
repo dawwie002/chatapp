@@ -6,6 +6,13 @@
 
 <h2>@ViewData["Title"]</h2>
 
+@if (TempData["Error"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        @TempData["Error"]
+    </div>
+}
+
 <p>
     <a asp-action="Create" class="btn btn-primary">➕ Utwórz nowy widżet</a>
 </p>
@@ -28,7 +35,11 @@
                     <td>@widget.Role</td>
                     <td>
                         <a asp-action="Edit" asp-route-id="@widget.WidgetId" class="btn btn-sm btn-warning">Edytuj</a>
-                        @* Możesz dodać więcej akcji jak Edycja czy Usuń jeśli potrzebujesz *@
+                        
+                        <form asp-action="Delete" asp-route-id="@widget.WidgetId" method="post" style="display:inline" 
+                              onsubmit="return confirm('Czy na pewno chcesz usunąć ten widżet?');">
+                            <button type="submit" class="btn btn-sm btn-danger">Usuń</button>
+                        </form>
                     </td>
                 </tr>
             }

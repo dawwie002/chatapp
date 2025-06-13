@@ -22,12 +22,24 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Message" asp-action="Index">Chat</a>
-                        </li>
+
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <!-- Przycisk dla pracownika (zalogowanego) -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Widget" asp-action="Index">Widgety</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Chat" asp-action="AgentChat">Czaty</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <!-- Przycisk dla klienta (niezalogowanego) -->
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Chat" asp-action="StartChat" asp-route-widgetId="WSTAW_GUID">Rozpocznij czat</a>
+                            </li>
+                        }
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>

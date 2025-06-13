@@ -1,10 +1,13 @@
-﻿namespace QuickChat.MVC.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace QuickChat.MVC.Models
 {
     public class WidgetUser
     {
-        public int Id { get; set; }
+        [Key]
+        public Guid Id { get; set; } = Guid.NewGuid();
 
-        public int WidgetId { get; set; }
+        public Guid WidgetId { get; set; }
         public Widget Widget { get; set; } = default!;
 
         public string UserId { get; set; } = default!;

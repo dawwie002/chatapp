@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using QuickChat.MVC.Data;
 using QuickChat.MVC.Helpers;
-using QuickChat.MVC.Hubs;
 using QuickChat.MVC.Interface;
 using QuickChat.MVC.Models;
 using QuickChat.MVC.Service;
@@ -19,10 +18,10 @@ builder.Services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.R
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
-builder.Services.AddScoped<IMessageService, MessageService>();
-builder.Services.AddScoped<IWidgetService, WidgetService>();
 
+//
+builder.Services.AddScoped<ICurrentUserService, CurrentUserService>();
+builder.Services.AddScoped<IWidgetService, WidgetService>();
 builder.Services.AddSignalR();
 
 var app = builder.Build();

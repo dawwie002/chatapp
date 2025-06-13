@@ -7,6 +7,6 @@ namespace QuickChat.MVC.Helpers
         string UserId { get; }
 
         Task<ApplicationUser> GetUser();
-        Task<string?> GetRoleInWidget(int widgetId);
+        Task<string?> GetRoleInWidget(Guid widgetId);
     }
 }
