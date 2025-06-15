@@ -1,0 +1,47 @@
+﻿@model QuickChat.MVC.ViewModels.WidgetViewModels.CategoryViewModel
+
+@{
+    ViewData["Title"] = "Dodaj kategorię";
+}
+
+<h3 class="mb-3">
+    <i class="bi bi-tags me-1"></i> Dodaj kategorię
+</h3>
+
+<form asp-action="AddCategory" method="post" class="mb-4">
+    <input type="hidden" asp-for="WidgetId" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label fw-semibold">Nazwa kategorii</label>
+        <input asp-for="Name" class="form-control" placeholder="Wpisz nazwę kategorii..." />
+        <span asp-validation-for="Name" class="text-danger small"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i> Dodaj
+    </button>
+</form>
+
+<h4 class="mb-3">
+    <i class="bi bi-card-list me-1"></i> Istniejące kategorie
+</h4>
+
+@if (Model.ExistingCategories.Any())
+{
+    <ul class="list-group mb-3">
+        @foreach (var category in Model.ExistingCategories)
+        {
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                @category
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <p class="text-muted">Brak kategorii.</p>
+}
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

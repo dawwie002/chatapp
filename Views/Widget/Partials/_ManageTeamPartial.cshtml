@@ -1,0 +1,79 @@
+﻿@model QuickChat.MVC.ViewModels.WidgetViewModels.ManageTeamViewModel
+
+@{
+    ViewData["Title"] = "Zarządzanie zespołem";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<h4>Dodaj użytkownika do widżetu</h4>
+<form asp-action="ManageTeam" method="post" class="row g-3 mt-3">
+    <div class="col-md-5">
+        <label asp-for="NewUserId" class="form-label fw-bold"></label>
+        <input asp-for="NewUserId" class="form-control" placeholder="Wprowadź GUID użytkownika" />
+        <span asp-validation-for="NewUserId" class="text-danger small"></span>
+    </div>
+
+    <div class="col-md-4">
+        <label asp-for="NewUserRole" class="form-label fw-bold"></label>
+        <select asp-for="NewUserRole" asp-items="Model.RolesSelectList" class="form-select"></select>
+        <span asp-validation-for="NewUserRole" class="text-danger small"></span>
+    </div>
+
+    <div class="col-md-3 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary w-100">Dodaj do zespołu</button>
+    </div>
+
+    <input type="hidden" asp-for="WidgetId" />
+</form>
+
+
+@if (Model.TeamMembers.Any())
+{
+    <div class="table-responsive mt-4">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Email</th>
+                    <th>Rola</th>
+                    <th>Akcje</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var member in Model.TeamMembers)
+                {
+                    <tr>
+                        <td>@member.Email</td>
+                        <td>
+                            @if (member.Role == "Owner")
+                            {
+                                <span class="badge bg-secondary">Owner</span>
+                            }
+                            else
+                            {
+                                <form asp-action="ChangeUserRole" method="post" style="display:inline;">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="widgetId" value="@Model.WidgetId" />
+                                    <input type="hidden" name="userId" value="@member.UserId" />
+                                    <select name="newRole" class="form-control-sm">
+                                        <option value="Admin" selected="@("Admin" == member.Role)">Admin</option>
+                                        <option value="Agent" selected="@("Agent" == member.Role)">Agent</option>
+                                    </select>
+                                    <button type="submit" class="btn btn-sm btn-primary">Zmień</button>
+                                </form>
+                            }
+                        </td>
+                        <td>
+                            <form asp-action="RemoveUser" method="post">
+                                @Html.AntiForgeryToken()
+                                <input type="hidden" name="widgetId" value="@Model.WidgetId" />
+                                <input type="hidden" name="userId" value="@member.UserId" />
+                                <button type="submit" class="btn btn-danger" @(member.Role == "Owner" ? "disabled" : "")>Usuń</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

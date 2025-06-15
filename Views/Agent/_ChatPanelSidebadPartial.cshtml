@@ -1,0 +1,15 @@
+﻿@model IEnumerable<QuickChat.MVC.Models.Conversation>
+
+@foreach (var conversation in Model)
+{
+    <a href="#" class="list-group-item list-group-item-action"
+       data-id="@conversation.Id"
+       data-category="@conversation.CategoryId?.ToString()">
+        <strong>@conversation.Widget?.Name</strong><br />
+        <small>@conversation.CreatedAt.ToLocalTime().ToString("g")</small>
+        @if (conversation.Category != null)
+        {
+            <div><span class="badge bg-secondary">@conversation.Category.Name</span></div>
+        }
+    </a>
+}

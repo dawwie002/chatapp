@@ -15,6 +15,5 @@ namespace QuickChat.MVC.Models
 
         public Guid ConversationId { get; set; }
         public Conversation Conversation { get; set; } = default!;
-
     }
 }

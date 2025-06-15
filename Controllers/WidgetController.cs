@@ -15,6 +15,7 @@ namespace QuickChat.MVC.Controllers
         private readonly IWidgetService widgetService;
         private readonly ICurrentUserService currentUserService;
 
+
         public WidgetController(IWidgetService widgetService, ICurrentUserService currentUserService)
         {
             this.widgetService = widgetService;
@@ -36,13 +37,46 @@ namespace QuickChat.MVC.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var widgets = await widgetService.GetWidgetsWithRolesForCurrentUser(); // lub GetWidgetsForCurrentUser()
+            var widgets = await widgetService.GetWidgetsWithRolesForCurrentUser();
+            ViewBag.CurrentUserId = currentUserService.UserId;
             return View(widgets);
         }
+
 
         public IActionResult Create()
         {
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> EditPanel(Guid id)
+        {
+            if (!await HasEditPermission(id))
+            {
+                TempData["Error"] = "Brak uprawnień.";
+                return RedirectToAction("Index");
+            }
+
+            var teamModel = await widgetService.GetTeamManagementData(id);
+            teamModel.RolesSelectList = new SelectList(new[] { RoleNames.Admin, RoleNames.Agent });
+
+            var categories = await widgetService.GetCategoriesForWidget(id);
+            var categoryModel = new CategoryViewModel
+            {
+                WidgetId = id,
+                ExistingCategories = categories.Select(c => c.Name).ToList() // 🔁 tu konwersja
+            };
+
+
+            var vm = new WidgetEditPanelViewModel
+            {
+                WidgetId = id,
+                EditModel = await widgetService.GetWidgetForEdit(id),
+                TeamModel = teamModel,
+                CategoryModel = categoryModel // ✅ TO jest kluczowe
+            };
+
+            return View("EditPanel", vm);
         }
 
         [HttpPost]
@@ -59,22 +93,6 @@ namespace QuickChat.MVC.Controllers
             return RedirectToAction("Index");
         }
 
-        [HttpGet]
-        public async Task<IActionResult> Edit(Guid id)
-        {
-            if (!await HasEditPermission(id))
-            {
-                TempData["Error"] = "Nie masz uprawnień do edytowania tego widżetu.";
-                return RedirectToAction("Index");
-            }
-
-
-            var widget = await widgetService.GetWidgetForEdit(id);
-            if (widget == null)
-                return NotFound();
-
-            return View(widget);
-        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -91,23 +109,7 @@ namespace QuickChat.MVC.Controllers
             if (!success)
                 return NotFound();
 
-            return RedirectToAction(nameof(Index));
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> ManageTeam(Guid id)
-        {
-            if (!await HasEditPermission(id))
-            {
-                TempData["Error"] = "Nie masz uprawnień do edytowania tego widżetu.";
-                return RedirectToAction("Index");
-            }
-            var vm = await widgetService.GetTeamManagementData(id);
-            if (vm == null)
-                return NotFound();
-
-            ViewBag.Roles = new SelectList(new[] { RoleNames.Admin, RoleNames.Agent});
-            return View(vm);
+            return RedirectToAction(nameof(EditPanel), new { id = model.Id });
         }
 
         [HttpPost]
@@ -133,7 +135,7 @@ namespace QuickChat.MVC.Controllers
                 ModelState.AddModelError(string.Empty, "Nie udało się dodać użytkownika (może już istnieje lub nieprawidłowy GUID).");
             }
 
-            return RedirectToAction(nameof(ManageTeam), new { id = model.WidgetId });
+            return RedirectToAction(nameof(EditPanel), new { id = model.WidgetId });
         }
 
         [HttpPost]
@@ -153,7 +155,6 @@ namespace QuickChat.MVC.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> RemoveUser(Guid widgetId, string userId)
@@ -163,7 +164,7 @@ namespace QuickChat.MVC.Controllers
             {
                 TempData["Error"] = "Nie udało się usunąć użytkownika z zespołu.";
             }
-            return RedirectToAction(nameof(ManageTeam), new { id = widgetId });
+            return RedirectToAction(nameof(EditPanel), new { id = widgetId });
         }
 
         [HttpPost]
@@ -174,29 +175,12 @@ namespace QuickChat.MVC.Controllers
             if (!success)
                 return NotFound();
 
-            return RedirectToAction(nameof(ManageTeam), new { id = widgetId });
-        }
-
-        [HttpGet]
-        public async Task<IActionResult> AddCategory(Guid widgetId)
-        {
-            if (!await HasEditPermission(widgetId))
-            {
-                TempData["Error"] = "Brak uprawnień.";
-                return RedirectToAction("Index");
-            }
-
-            var vm = new CreateCategoryViewModel
-            {
-                WidgetId = widgetId
-            };
-
-            return View(vm);
+            return RedirectToAction(nameof(EditPanel), new { id = widgetId });
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddCategory(CreateCategoryViewModel model)
+        public async Task<IActionResult> AddCategory(CategoryViewModel model)
         {
             if (!await HasEditPermission(model.WidgetId))
             {
@@ -214,7 +198,26 @@ namespace QuickChat.MVC.Controllers
                 return View(model);
             }
 
-            return RedirectToAction("Edit", new { id = model.WidgetId });
+            return RedirectToAction(nameof(EditPanel), new { id = model.WidgetId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteCategory(Guid widgetId, string categoryName)
+        {
+            if (!await HasEditPermission(widgetId))
+            {
+                TempData["Error"] = "Brak uprawnień.";
+                return RedirectToAction(nameof(Index));
+            }
+
+            var success = await widgetService.DeleteCategory(widgetId, categoryName);
+            if (!success)
+            {
+                TempData["Error"] = "Nie udało się usunąć kategorii.";
+            }
+
+            return RedirectToAction(nameof(EditPanel), new { id = widgetId });
         }
 
     }

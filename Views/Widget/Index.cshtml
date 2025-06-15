@@ -4,7 +4,17 @@
     ViewData["Title"] = "Twoje widżety";
 }
 
-<h2>@ViewData["Title"]</h2>
+<style>
+    .section-title {
+        border-bottom: 2px solid #dee2e6;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+</style>
+
+<h1 class="section-title">
+    <i class="bi bi-window me-1"></i> @ViewData["Title"]
+</h1>
 
 @if (TempData["Error"] != null)
 {
@@ -13,40 +23,80 @@
     </div>
 }
 
-<p>
-    <a asp-action="Create" class="btn btn-primary">➕ Utwórz nowy widżet</a>
-</p>
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2 class="text-muted mb-4">Zarządzaj swoimi widżetami</h2>
+    <a asp-action="Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i> Utwórz nowy widżet
+    </a>
+</div>
+
+
+
+@if (ViewBag.CurrentUserId != null)
+{
+    <div class="alert alert-info d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2" role="alert">
+        <div>
+            <i class="bi bi-person-badge fs-4 me-2 text-primary"></i>
+        </div>
+        <div class="flex-fill">
+            <div>
+                <strong>Twój identyfikator użytkownika:</strong> <code>@ViewBag.CurrentUserId</code>
+            </div>
+            <div class="small text-muted">
+                Przekaż ten identyfikator właścicielowi widżetu, aby mógł dodać Cię do zespołu.
+            </div>
+        </div>
+    </div>
+}
+
+
 
 @if (Model.Any())
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nazwa</th>
-                <th>Rola</th>
-                <th>Akcje</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var widget in Model)
-            {
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-light">
                 <tr>
-                    <td>@widget.WidgetName</td>
-                    <td>@widget.Role</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@widget.WidgetId" class="btn btn-sm btn-warning">Edytuj</a>
-                        
-                        <form asp-action="Delete" asp-route-id="@widget.WidgetId" method="post" style="display:inline" 
-                              onsubmit="return confirm('Czy na pewno chcesz usunąć ten widżet?');">
-                            <button type="submit" class="btn btn-sm btn-danger">Usuń</button>
-                        </form>
-                    </td>
+                    <th>Nazwa</th>
+                    <th>Rola</th>
+                    <th style="width: 100px;">Akcje</th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var widget in Model)
+                {
+                    <tr>
+                        <td>@widget.WidgetName</td>
+                        <td>@widget.Role</td>
+                        <td>
+                            <div class="d-flex gap-2">
+                                <a asp-action="EditPanel" asp-route-id="@widget.WidgetId"
+                                   class="btn btn-sm btn-outline-secondary"
+                                   title="Panel edycji">
+                                    <i class="bi bi-gear"></i>
+                                </a>
+
+                                <form asp-action="Delete" asp-route-id="@widget.WidgetId" method="post" class="d-inline"
+                                      onsubmit="return confirm('Czy na pewno chcesz usunąć ten widżet?');">
+                                    <button type="submit"
+                                            class="btn btn-sm btn-outline-danger"
+                                            title="Usuń widżet">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
 else
 {
-    <p>Nie masz jeszcze żadnych widżetów.</p>
+    <p class="text-muted">Nie masz jeszcze żadnych widżetów.</p>
+}
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
 }

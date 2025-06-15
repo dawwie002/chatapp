@@ -1,0 +1,105 @@
+﻿@model IEnumerable<QuickChat.MVC.Models.Conversation>
+@using Microsoft.AspNetCore.Mvc.Rendering
+@inject QuickChat.MVC.Data.ApplicationDbContext dbContext
+
+@{
+    var categories = dbContext.Categories
+        .OrderBy(c => c.Name)
+        .Select(c => new SelectListItem { Value = c.Id.ToString(), Text = c.Name })
+        .ToList();
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-3 border-end" style="height: 100vh; overflow-y: auto;">
+            <div class="p-3 border-bottom">
+                <select id="categoryFilter" class="form-select">
+                    <option value="">Wszystkie kategorie</option>
+                    @foreach (var cat in categories)
+                    {
+                        <option value="@cat.Value">@cat.Text</option>
+                    }
+                </select>
+            </div>
+            <div class="list-group" id="conversationList">
+                @foreach (var conversation in Model)
+                {
+                    <a href="#" class="list-group-item list-group-item-action"
+                       data-id="@conversation.Id"
+                       data-category="@conversation.CategoryId?.ToString()">
+                        <strong>@conversation.Widget?.Name</strong><br />
+                        <small>@conversation.CreatedAt.ToLocalTime().ToString("g")</small>
+                        @if (conversation.Category != null)
+                        {
+                            <div><span class="badge bg-secondary">@conversation.Category.Name</span></div>
+                        }
+                    </a>
+                }
+            </div>
+        </div>
+
+        <!-- Chat panel -->
+        <div class="col-md-9" id="chatContainer">
+            <div class="text-center text-muted mt-5">Wybierz konwersację z lewej strony</div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        const chatHub = new signalR.HubConnectionBuilder()
+            .withUrl("/chathub")
+            .build();
+
+        chatHub.start()
+            .then(() => console.log("✅ SignalR connected"))
+            .catch(err => console.error("❌ SignalR failed", err));
+
+        $(document).ready(function () {
+            // Ładowanie rozmowy po kliknięciu
+            $('#conversationList').on('click', 'a', function (e) {
+                e.preventDefault();
+                const id = $(this).data('id');
+
+                $.get(`/Agent/GetConversationPartial/${id}`, function (html) {
+                    $('#chatContainer').html(html);
+                    chatHub.invoke("JoinConversation", id.toString());
+                });
+            });
+
+            // Filtrowanie kategorii
+            $('#categoryFilter').on('change', function () {
+                const selected = ($(this).val() || "").toLowerCase();
+
+                $('#conversationList a').each(function () {
+                    const cat = (this.getAttribute("data-category") || "").toLowerCase();
+
+                    if (!selected || cat === selected) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
+            // 🔁 Odświeżaj sidebar co 1000ms
+            setInterval(function () {
+                $.get("/Agent/ChatPanelSidebarPartial", function (html) {
+                    $("#conversationList").html(html);
+                    $('#categoryFilter').trigger('change');
+                });
+            }, 1000);
+        });
+
+        // (Zostawiam też ten fallback z SignalR — możesz usunąć jeśli zbędny)
+        chatHub.on("NewConversation", function (widgetId) {
+            console.log("📩 Nowa konwersacja: widget " + widgetId);
+
+            $.get("/Agent/ChatPanelSidebarPartial", function (html) {
+                $("#conversationList").html(html);
+                $('#categoryFilter').trigger('change');
+            });
+        });
+    </script>
+}

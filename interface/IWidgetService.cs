@@ -26,5 +26,7 @@ namespace QuickChat.MVC.Interface
 
         Task<bool> AddCategoryToWidget(Guid widgetId, string categoryName);
         Task<List<Category>> GetCategoriesForWidget(Guid widgetId);
+        Task<bool> DeleteCategory(Guid widgetId, string categoryName);
+
     }
 }

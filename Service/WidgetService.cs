@@ -216,5 +216,23 @@ namespace QuickChat.MVC.Service
                 .OrderBy(c => c.Name)
                 .ToListAsync();
         }
+        public async Task<bool> DeleteCategory(Guid widgetId, string categoryName)
+        {
+            var widget = await context.Widgets
+                .Include(w => w.Categories)
+                .FirstOrDefaultAsync(w => w.Id == widgetId);
+
+            if (widget == null)
+                return false;
+
+            var category = widget.Categories.FirstOrDefault(c => c.Name == categoryName);
+            if (category == null)
+                return false;
+
+            context.Categories.Remove(category);
+            await context.SaveChangesAsync();
+            return true;
+        }
+
     }
 }

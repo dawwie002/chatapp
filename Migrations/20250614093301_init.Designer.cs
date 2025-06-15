@@ -12,7 +12,7 @@ using QuickChat.MVC.Data;
 namespace QuickChat.MVC.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250613153734_init")]
+    [Migration("20250614093301_init")]
     partial class init
     {
         /// <inheritdoc />
